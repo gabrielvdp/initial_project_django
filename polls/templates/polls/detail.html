@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Details for question {{question.question_id}} </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="alert alert-primary">
+            <h2>{{question.question_text}}</h2>
+            <ul class="list-group list-group-flush">
+                {% for choice in question.choice_set.all %}
+                <li class="list-group-item">
+                    {{choice.choice_text}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>
